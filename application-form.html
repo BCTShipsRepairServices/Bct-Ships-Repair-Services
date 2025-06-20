@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        /* Your existing CSS styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -85,7 +86,7 @@
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -93,22 +94,16 @@
         
         .btn-submit:hover {
             background-color: #1a365d;
+            transform: translateY(-2px);
+        }
+        
+        .btn-submit:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
         }
         
         .required {
             color: #e53e3e;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #2c5282;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -120,11 +115,16 @@
             <p>Please fill out this form completely to be considered for employment</p>
         </header> 
         <div class="form-container">
-            <form id="applicationForm" action="https://formsubmit.co/bctshipservices@gmail.com" method="POST" enctype="multipart/form-data">
+            <form id="applicationForm" 
+                  action="https://formsubmit.co/bctshipservices@gmail.com" 
+                  method="POST"
+                  enctype="multipart/form-data">
+                
+                <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="New Job Application - BCT">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bctshipsservices.github.io/thank-you.html">
+                <input type="hidden" name="_next" value="https://bctshipsservices.github.io/application-success.html">
                 <input type="hidden" name="_autoresponse" value="Thank you for applying to BCT Ships Repair Services! We've received your application and will review it shortly.">
                 
                 <!-- Personal Information -->
@@ -186,28 +186,36 @@
                     </select>
                 </div>
                 
-                <button type="submit" class="btn-submit">
+                <button type="submit" class="btn-submit" id="submitBtn">
                     <span class="material-icons">send</span> Submit Application
                 </button>
-                
-                <a href="index.html" class="back-link">
-                    <span class="material-icons">arrow_back</span> Back to Main Site
-                </a>
             </form>
         </div>
     </div>
 
     <script>
-        // Form validation
         document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
             const fileInput = document.getElementById('resume');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-icons">hourglass_empty</span> Processing...';
+            
+            // Validate file size
             if (fileInput.files.length > 0) {
                 const fileSize = fileInput.files[0].size / 1024 / 1024; // MB
                 if (fileSize > 10) {
                     alert('File size exceeds 10MB limit');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span class="material-icons">send</span> Submit Application';
                     e.preventDefault();
+                    return false;
                 }
             }
+            
+            // Form will submit and redirect automatically via FormSubmit
+            return true;
         });
     </script>
 </body>
