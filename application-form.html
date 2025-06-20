@@ -32,7 +32,7 @@
             margin-bottom: 2rem;
         }
         
-        h1 {
+        h1, h2 {
             color: #2c5282;
             margin-bottom: 1rem;
         }
@@ -69,6 +69,7 @@
             border-radius: 6px;
             font-family: inherit;
             font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         textarea {
@@ -104,6 +105,25 @@
         .required {
             color: #e53e3e;
         }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .radio-group, .checkbox-group {
+            margin-bottom: 1rem;
+        }
+        
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -126,23 +146,8 @@
                 <input type="hidden" name="_next" value="https://bctshipsrepairservices.github.io/Bct-Ships-Repair-Services/application-success.html">
                 <input type="hidden" name="_autoresponse" value="Thank you for applying to BCT Ships Repair Services! We've received your application and will review it shortly.">
                 
-                <!-- Personal Information -->
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" name="Full Name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="Email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="Phone" required>
-                </div>
-                
-                <!-- Job Application Details -->
+                <!-- Position Applying For -->
+                <h2>Position Information</h2>
                 <div class="form-group">
                     <label for="position">Position Applying For <span class="required">*</span></label>
                     <select id="position" name="Position" required>
@@ -156,35 +161,246 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="experience">Years of Experience <span class="required">*</span></label>
-                    <input type="number" id="experience" name="Years of Experience" min="0" required>
+                <!-- Personal Information -->
+                <h2>Personal Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="givenName">Given Name <span class="required">*</span></label>
+                        <input type="text" id="givenName" name="Given Name" required>
+                    </div>
                 </div>
-                
-                <!-- File Upload -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" id="middleName" name="Middle Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="nickname">Nickname</label>
+                        <input type="text" id="nickname" name="Nickname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <input type="text" id="address" name="Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNo">Contact No. <span class="required">*</span></label>
+                    <input type="tel" id="contactNo" name="Contact No." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sssNo">SSS#</label>
+                        <input type="text" id="sssNo" name="SSS#">
+                    </div>
+                    <div class="form-group">
+                        <label for="tinNo">TIN#</label>
+                        <input type="text" id="tinNo" name="TIN#">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pagIbigNo">Pag-Ibig#</label>
+                        <input type="text" id="pagIbigNo" name="Pag-Ibig#">
+                    </div>
+                    <div class="form-group">
+                        <label for="philhealthNo">Philhealth#</label>
+                        <input type="text" id="philhealthNo" name="Philhealth#">
+                    </div>
+                </div>
+
+                <!-- Educational Background -->
+                <h2>Educational Background</h2>
+                <div class="form-group">
+                    <label for="primarySchool">Primary School</label>
+                    <input type="text" id="primarySchool" name="Primary School">
+                </div>
+                <div class="form-group">
+                    <label for="secondarySchool">Secondary School</label>
+                    <input type="text" id="secondarySchool" name="Secondary School">
+                </div>
+                <div class="form-group">
+                    <label for="vocationalCourse">Vocational Course</label>
+                    <input type="text" id="vocationalCourse" name="Vocational Course">
+                </div>
+                <div class="form-group">
+                    <label for="collegeCourse">College Course</label>
+                    <input type="text" id="collegeCourse" name="College Course">
+                </div>
+                <div class="form-group">
+                    <label for="postGraduateCourse">Post Graduate Course</label>
+                    <input type="text" id="postGraduateCourse" name="Post Graduate Course">
+                </div>
+
+                <!-- Employment History -->
+                <h2>Employment History</h2>
+                <div class="form-group">
+                    <label>Company 1</label>
+                    <input type="text" name="Company 1" placeholder="Company Name">
+                    <input type="text" name="Position 1" placeholder="Position">
+                    <input type="text" name="Inclusive Dates 1" placeholder="Inclusive Dates">
+                </div>
+                <div class="form-group">
+                    <label>Company 2</label>
+                    <input type="text" name="Company 2" placeholder="Company Name">
+                    <input type="text" name="Position 2" placeholder="Position">
+                    <input type="text" name="Inclusive Dates 2" placeholder="Inclusive Dates">
+                </div>
+                <div class="form-group">
+                    <label>Company 3</label>
+                    <input type="text" name="Company 3" placeholder="Company Name">
+                    <input type="text" name="Position 3" placeholder="Position">
+                    <input type="text" name="Inclusive Dates 3" placeholder="Inclusive Dates">
+                </div>
+                <div class="form-group">
+                    <label>Company 4</label>
+                    <input type="text" name="Company 4" placeholder="Company Name">
+                    <input type="text" name="Position 4" placeholder="Position">
+                    <input type="text" name="Inclusive Dates 4" placeholder="Inclusive Dates">
+                </div>
+
+                <!-- Training/Seminar -->
+                <h2>Training/Seminar</h2>
+                <div class="form-group">
+                    <label>Training/Seminar 1</label>
+                    <input type="text" name="Training Title 1" placeholder="Title">
+                    <input type="text" name="Training Dates 1" placeholder="Inclusive Dates/Hrs">
+                    <input type="text" name="Training Resource 1" placeholder="Resource">
+                </div>
+                <div class="form-group">
+                    <label>Training/Seminar 2</label>
+                    <input type="text" name="Training Title 2" placeholder="Title">
+                    <input type="text" name="Training Dates 2" placeholder="Inclusive Dates/Hrs">
+                    <input type="text" name="Training Resource 2" placeholder="Resource">
+                </div>
+                <div class="form-group">
+                    <label>Training/Seminar 3</label>
+                    <input type="text" name="Training Title 3" placeholder="Title">
+                    <input type="text" name="Training Dates 3" placeholder="Inclusive Dates/Hrs">
+                    <input type="text" name="Training Resource 3" placeholder="Resource">
+                </div>
+
+                <!-- Licenses/Certificates/Special Skills -->
+                <h2>Licenses/Certificates/Special Skills</h2>
+                <div class="form-group">
+                    <textarea name="Licenses/Certificates/Special Skills" placeholder="List your licenses, certificates, and special skills..."></textarea>
+                </div>
+
+                <!-- Additional Information -->
+                <h2>Additional Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="Date of Birth">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthPlace">Birth Place</label>
+                        <input type="text" id="birthPlace" name="Birth Place">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="civilStatus">Civil Status</label>
+                        <select id="civilStatus" name="Civil Status">
+                            <option value="">Select</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Divorced">Divorced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="spouseName">Spouse's Name</label>
+                        <input type="text" id="spouseName" name="Spouse's Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="spouseOccupation">Spouse's Occupation</label>
+                    <input type="text" id="spouseOccupation" name="Spouse's Occupation">
+                </div>
+                <div class="form-group">
+                    <label for="childrenNames">Children's Names</label>
+                    <textarea id="childrenNames" name="Children's Names" placeholder="List your children's names..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fatherName">Father's Name</label>
+                        <input type="text" id="fatherName" name="Father's Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="fatherOccupation">Father's Occupation</label>
+                        <input type="text" id="fatherOccupation" name="Father's Occupation">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="motherName">Mother's Name</label>
+                        <input type="text" id="motherName" name="Mother's Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="motherOccupation">Mother's Occupation</label>
+                        <input type="text" id="motherOccupation" name="Mother's Occupation">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="siblings">Brothers/Sisters</label>
+                    <textarea id="siblings" name="Brothers/Sisters" placeholder="List your siblings' names..."></textarea>
+                </div>
+
+                <!-- Questions -->
+                <h2>Questions</h2>
+                <div class="form-group">
+                    <label>1. Are you related by consanguinity or affinity up to the 5th degree to an employee of the entity?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="relatedEmployee" value="Yes"> Yes</label>
+                        <label><input type="radio" name="relatedEmployee" value="No"> No</label>
+                    </div>
+                    <textarea name="relatedEmployeeDetails" placeholder="Give particulars..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>2. Do you have any pending:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="pendingAdministrativeCase"> Administrative Case</label>
+                        <label><input type="checkbox" name="pendingCriminalCase"> Criminal Case</label>
+                    </div>
+                    <textarea name="pendingCaseDetails" placeholder="If you have any, give details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>3. Have you ever been convicted of any crime or violation of any law, decree, or regulation by any court or tribunal?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="convictedCrime" value="Yes"> Yes</label>
+                        <label><input type="radio" name="convictedCrime" value="No"> No</label>
+                    </div>
+                    <textarea name="convictedCrimeDetails" placeholder="If yes, give details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>4. Have you ever been convicted of any administrative offense?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="convictedAdminOffense" value="Yes"> Yes</label>
+                        <label><input type="radio" name="convictedAdminOffense" value="No"> No</label>
+                    </div>
+                    <textarea name="convictedAdminOffenseDetails" placeholder="If yes, give details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>5. Have you ever been retired, forced to resign, or dropped from employment in the public or private sector?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="retiredResigned" value="Yes"> Yes</label>
+                        <label><input type="radio" name="retiredResigned" value="No"> No</label>
+                    </div>
+                    <textarea name="retiredResignedDetails" placeholder="If yes, state your reason..."></textarea>
+                </div>
+
+                <!-- Upload Resume -->
+                <h2>Upload Resume</h2>
                 <div class="form-group">
                     <label for="resume">Upload Resume (PDF/DOC) <span class="required">*</span></label>
                     <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx" required>
                     <small>Max file size: 10MB</small>
                 </div>
-                
-                <div class="form-group">
-                    <label for="coverLetter">Cover Letter</label>
-                    <textarea id="coverLetter" name="Cover Letter" placeholder="Tell us why you'd be a great fit..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="howHeard">How did you hear about us?</label>
-                    <select id="howHeard" name="How did you hear about us?">
-                        <option value="">Select an option</option>
-                        <option value="Website">Website</option>
-                        <option value="Social Media">Social Media</option>
-                        <option value="Job Board">Job Board</option>
-                        <option value="Referral">Referral</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                
+
                 <button type="submit" class="btn-submit" id="submitBtn">
                     <span class="material-icons">send</span> Submit Application
                 </button>
