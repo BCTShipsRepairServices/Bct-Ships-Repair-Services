@@ -118,14 +118,16 @@
             <div class="logo">BCT Ships Repair Services</div>
             <h1>Job Application Form</h1>
             <p>Please fill out this form completely to be considered for employment</p>
-        </header>
-        
-        <div class="form-container">
-            <form id="applicationForm" 
-                  action="https://formsubmit.co/bctshipservices@gmail.com" 
-                  method="POST"
-                  enctype="multipart/form-data">
-                  
+        </header> 
+<form id="applicationForm" 
+      action="https://formsubmit.co/el/YOUR_FORM_ID"  <!-- Replace with your FormSubmit ID -->
+      method="POST"
+      enctype="multipart/form-data">
+      
+  <input type="hidden" name="_template" value="table">  
+  <input type="hidden" name="_attachment" value="true"> <!-- Forces file attachments -->
+  <input type="file" name="file" accept=".pdf"> <!-- Rename field to "file" -->
+</form>
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="New Job Application - BCT">
                 <input type="hidden" name="_template" value="table">
