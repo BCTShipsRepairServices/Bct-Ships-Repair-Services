@@ -1,0 +1,40 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $details = $_POST['details'];
+    $file = $_FILES['file'];
+
+    // Prepare email
+    $to = "bctshipservices@gmail.com";
+    $subject = "New Purchase Order Request from $name";
+    $message = "Name: $name\nEmail: $email\nOrder Details: $details";
+
+    // Handle file upload
+    if ($file['error'] == UPLOAD_ERR_OK) {
+        $fileTmpPath = $file['tmp_name'];
+        $fileName = $file['name'];
+        $fileSize = $file['size'];
+        $fileType = $file['type'];
+
+        // Set the destination path for the uploaded file
+        $uploadFileDir = './uploaded_files/';
+        $dest_path = $uploadFileDir . $fileName;
+
+        // Move the file to the destination directory
+        if(move_uploaded_file($fileTmpPath, $dest_path)) {
+            $message .= "\nFile uploaded: $fileName";
+        } else {
+            $message .= "\nFile upload failed.";
+        }
+    }
+
+    // Send email
+    $headers = "From: $email";
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Order submitted successfully.";
+    } else {
+        echo "Error in sending email.";
+    }
+}
+?>
