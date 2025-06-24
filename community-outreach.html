@@ -19,6 +19,28 @@
         .community-outreach-images { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         .workforce-profiles { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .profile { flex: 1 1 45%; /* Two profiles per row */ }
+        
+        /* Header size adjustment */
+        header { padding: 5px 0; } /* Reduced padding for header */
+        
+        /* Home button outline */
+        nav a {
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 2px solid transparent; /* Default border */
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        nav a:hover {
+            border-color: #3182ce; /* Outline color on hover */
+        }
+
+        /* Work history bullet points */
+        #work-history ul {
+            list-style-position: outside; /* Keep bullets outside */
+            padding-left: 20px; /* Add padding to align text */
+        }
+
         @media (max-width: 768px) {
             .community-outreach-images { flex-direction: column; }
             .profile { flex: 1 1 100%; /* One profile per row on small screens */ }
@@ -40,7 +62,6 @@
             <h2 id="about-title" class="highlight">About Us</h2>
             <p>Our group of skilled engineers and specialists offers the adapt ability to execute any work done on ships that satisfies shipowners in accordance and compliance to classification society standard.</p>
             <p>For several years, our team completed various job descriptions that were carried out satisfactorily crafted through expertise with strategic repairs onboardship.</p>
-    
         </section>
 
         <section id="workforce" aria-labelledby="workforce-title">
@@ -105,7 +126,7 @@
             <p>The journey of BCT Ships Repair Services is not just a professional endeavor, but a personal mission to make a meaningful difference. My vision is to build a company that embodies the values of quality, innovation, and customer satisfaction — a company that stands out in the maritime industry for its ability to deliver exceptional results and create lasting impact.</p>
             <p>Thank you for your continued trust and partnership. We are excited about the future and look forward to contributing to the growth and success of the maritime industry.</p>
         </section>
-    </main>
+
         <section id="work-history" aria-labelledby="work-history-title">
             <h2 id="work-history-title">Work History Overview</h2>
             <h3>LCT “NAVISTAR”</h3>
