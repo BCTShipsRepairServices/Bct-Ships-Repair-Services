@@ -29,19 +29,13 @@
 
         /* Main */
         main { padding: 48px 0 96px; }
-        section { margin-bottom: 64px; }
+        section { margin-bottom: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
         section h2 { font-size: 2rem; }
         section p { font-size: 1.1rem; color: #4a5568; }
 
-        /* Services Section */
-        .services-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-        .service-card { background: #ffffff; border-radius: 12px; padding: 16px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-        .service-card h3 { margin-top: 0; }
-
         /* Responsive Sections */
         @media (max-width: 768px) {
-            .services-container { grid-template-columns: 1fr; }
-            section { padding: 0 16px; }
+            section { grid-template-columns: 1fr; gap: 32px; }
         }
 
         /* Buttons */
@@ -62,11 +56,6 @@
 
         /* Accessibility Focus */
         a:focus-visible, button:focus-visible { outline: 3px solid #3182ce; outline-offset: 2px; }
-
-        /* Flexbox for alignment */
-        .flex { display: flex; }
-        .gap-3 { gap: 1rem; }
-        .justify-between { justify-content: space-between; }
     </style>
     <!-- Correct Google Site Verification -->
     <meta name="google-site-verification" content="googlea20b2a48c3a07542" />
@@ -82,7 +71,7 @@
                 <a href="#services">
                     <span class="material-icons" aria-hidden="true">build</span> Services
                 </a>
-                <a href="https://bctshipsrepairservices.github.io/Bct-Ships-Repair-Services/community-outreach.html">
+                <a href="#about">
                     <span class="material-icons" aria-hidden="true">info_outline</span> About
                 </a>
                 <a href="#purchase-order">
@@ -92,77 +81,78 @@
         </div>
     </header>
     <main role="main" class="container">
-        <section id="about" aria-labelledby="about-title" style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="flex: 1;">
+        <section id="about" aria-labelledby="about-title">
+            <div>
                 <h2 id="about-title">About Us</h2>
                 <p>BCT Ships Repair Services is a ships’ repair contractor serving shipyards and commercial ship-owners in the Philippine maritime sector. Our office is located at Pag-Utlan, Tayud, Consolacion, Cebu, Philippines.</p>
                 <p>We have earned our well-regarded reputation by providing accurate job performance, reasonable pricing, guaranteed reliability, and quality standard results with economical costs of ship repair services to our clients. We are equipped and highly qualified to provide engineering services as well as structural and machinery repairs.</p>
                 <p>BCT’s quality assurance and safety standard is recognized by the Maritime Industry Authority (MARINA). With a can-do attitude, our customers immediately benefit from our experienced team of ship repair professionals.</p>
             </div>
-            <div style="flex: 0 0 300px;">
-                <img src="https://raw.githubusercontent.com/BCTShipsRepairServices/Bct-Ships-Repair-Services/main/BCT LOGO.png" alt="BCT Logo" style="width: 100%; height: auto;" onerror="this.style.display='none'">
+            <div>
+                <img src="https://raw.githubusercontent.com/BCTShipsRepairServices/Bct-Ships-Repair-Services/main/BCT LOGO.png" alt="BCT Logo" onerror="this.style.display='none'">
             </div>
         </section>
-        
         <section id="commitment" aria-labelledby="commitment-title">
             <div>
                 <h2 id="commitment-title">Commitment</h2>
                 <p>We bond a strong relationship with all our clients, supporting them wherever they are, and we will meet their needs to provide them with the best repair services possible.</p>
             </div>
+            <div>
+                <img src="https://github.com/blackboxai-e128/repair/blob/main/img1.jpeg?raw=true" alt="Welders working on ship repairs in dry dock" onerror="this.style.display='none'" />
+            </div>
         </section>
-
-        <section id="mission-vision" aria-labelledby="mission-vision-title" class="flex justify-between">
+        
+        <section id="services" aria-labelledby="services-title">
+            <div>
+                <img src="https://github.com/blackboxai-e128/repair/blob/main/img2.jpeg?raw=true" alt="Ship undergoing hull repairs with workers using various tools" onerror="this.style.display='none'" />
+            </div>
             <div>
                 <h2 id="mission-title">Mission</h2>
                 <p>Our mission is to provide superior ship repair services, prioritizing the best interests of both our customers and our dedicated employees. We strive for excellence in customer service through continuous development of our craftsmanship, competencies, and a positive, results-driven approach. Building productive, customer-centric, and service-oriented relationships, we are also committed to enhancing the value of our services through proactive environmental protection.</p>
                 <h2 id="vision-title">Vision</h2>
                 <p>“To be one of the leading local ship repair service providers in the Philippine maritime industry.”</p>
             </div>
-        </section>
+            <div>
+                <h2 id="services-title">Services</h2>
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">build_circle</span> Structural Work
+                </h3>
+                <p>We provide expert solutions for a variety of structural repairs. Our skilled team ensures every component of your vessel is restored to its original integrity and strength.</p>
 
-        <section id="services" aria-labelledby="services-title">
-            <h2 id="services-title">Services</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">build_circle</span> Structural Work
-                    </h3>
-                    <p>We provide expert solutions for a variety of structural repairs. Our skilled team ensures every component of your vessel is restored to its original integrity and strength.</p>
-                </div>
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">brush</span> Carpentry and Painting Works
-                    </h3>
-                    <p>Our carpentry services include repairing and replacing wooden structures, while our painting works ensure that your ship maintains its aesthetic and protective finishes.</p>
-                </div>
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">build</span> Mechanical Repair and Maintenance
-                    </h3>
-                    <p>We specialize in mechanical systems repair and preventive maintenance to keep your ship's machinery running smoothly and efficiently.</p>
-                </div>
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">cleaning_services</span> Cleaning of Tanks
-                    </h3>
-                    <p>Our cleaning services ensure that tanks are thoroughly cleaned and maintained, preventing contamination and ensuring compliance with safety standards.</p>
-                </div>
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">electric_car</span> Electrical Repair And Maintenance
-                    </h3>
-                    <p>We provide comprehensive electrical services to ensure your ship's electrical systems are operational and up to date, enhancing overall safety and performance.</p>
-                </div>
-                <div class="service-card">
-                    <h3>
-                        <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">miscellaneous_services</span> Machine Shop Works
-                    </h3>
-                    <p>Our machine shop is equipped to handle precision machining tasks, offering custom fabrication and repair solutions tailored to your vessel’s specific needs.</p>
-                </div>
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">brush</span> Carpentry and Painting Works
+                </h3>
+                <p>Our carpentry services include repairing and replacing wooden structures, while our painting works ensure that your ship maintains its aesthetic and protective finishes.</p>
+
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">build</span> Mechanical Repair and Maintenance
+                </h3>
+                <p>We specialize in mechanical systems repair and preventive maintenance to keep your ship's machinery running smoothly and efficiently.</p>
+
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">cleaning_services</span> Cleaning of Tanks
+                </h3>
+                <p>Our cleaning services ensure that tanks are thoroughly cleaned and maintained, preventing contamination and ensuring compliance with safety standards.</p>
+
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">electric_car</span> Electrical Repair And Maintenance
+                </h3>
+                <p>We provide comprehensive electrical services to ensure your ship's electrical systems are operational and up to date, enhancing overall safety and performance.</p>
+
+                <h3>
+                    <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">miscellaneous_services</span> Machine Shop Works
+                </h3>
+                <p>Our machine shop is equipped to handle precision machining tasks, offering custom fabrication and repair solutions tailored to your vessel’s specific needs.</p>
+
+                <form action="https://www.facebook.com/bonifacio.tiongzon" method="get" target="_blank" class="flex gap-3">
+                    <button class="btn-primary" type="submit" tabindex="0" aria-label="Contact us for contracting services">
+                        <span class="material-icons" aria-hidden="true">call</span> Contact Us 
+                    </button>
+                </form>
             </div>
         </section>
-
-        <section id="hiring" aria-labelledby="hiring-title" class="flex justify-between">
+        
+        <section id="hiring" aria-labelledby="hiring-title">
             <div>
                 <h2 id="hiring-title">Hiring Opportunities</h2>
                 <p>Join BCT Ships Repair Services and become part of a dedicated team delivering top-quality ship repair and maintenance solutions. We are always looking for skilled professionals in various disciplines including welders, electricians, engineers, naval architects, and project managers.</p>
@@ -171,6 +161,9 @@
                     <span class="material-icons" aria-hidden="true">send</span> Apply Now 
                 </a>
             </div>
+        </section>
+
+        <section id="purchase-order" aria-labelledby="purchase-order-title">
             <div>
                 <h2 id="purchase-order-title">Purchase Order</h2>
                 <p>For all your purchase order needs, please fill out the form linked below. We ensure prompt processing and delivery of your orders.</p>
