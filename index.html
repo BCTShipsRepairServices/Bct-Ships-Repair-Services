@@ -56,6 +56,11 @@
 
         /* Accessibility Focus */
         a:focus-visible, button:focus-visible { outline: 3px solid #3182ce; outline-offset: 2px; }
+
+        /* Flexbox for alignment */
+        .flex { display: flex; }
+        .gap-3 { gap: 1rem; }
+        .justify-between { justify-content: space-between; }
     </style>
     <!-- Correct Google Site Verification -->
     <meta name="google-site-verification" content="googlea20b2a48c3a07542" />
@@ -77,6 +82,9 @@
                 <a href="#purchase-order">
                     <span class="material-icons" aria-hidden="true">shopping_cart</span> Purchase Order
                 </a>
+                <a href="https://bctshipsrepairservices.github.io/Bct-Ships-Repair-Services/community-outreach.html" class="btn-primary" aria-label="View Company Profile">
+                    <span class="material-icons" aria-hidden="true">info</span> Company Profile
+                </a>
             </nav>
         </div>
     </header>
@@ -92,20 +100,15 @@
                 <img src="https://raw.githubusercontent.com/BCTShipsRepairServices/Bct-Ships-Repair-Services/main/BCT LOGO.png" alt="BCT Logo" onerror="this.style.display='none'">
             </div>
         </section>
-        <section id="commitment" aria-labelledby="commitment-title">
+        
+        <section id="commitment" aria-labelledby="commitment-title" class="flex justify-between">
             <div>
                 <h2 id="commitment-title">Commitment</h2>
                 <p>We bond a strong relationship with all our clients, supporting them wherever they are, and we will meet their needs to provide them with the best repair services possible.</p>
             </div>
-            <div>
-                <img src="https://github.com/blackboxai-e128/repair/blob/main/img1.jpeg?raw=true" alt="Welders working on ship repairs in dry dock" onerror="this.style.display='none'" />
-            </div>
         </section>
-        
-        <section id="services" aria-labelledby="services-title">
-            <div>
-                <img src="https://github.com/blackboxai-e128/repair/blob/main/img2.jpeg?raw=true" alt="Ship undergoing hull repairs with workers using various tools" onerror="this.style.display='none'" />
-            </div>
+
+        <section id="mission-vision" aria-labelledby="mission-vision-title" class="flex justify-between">
             <div>
                 <h2 id="mission-title">Mission</h2>
                 <p>Our mission is to provide superior ship repair services, prioritizing the best interests of both our customers and our dedicated employees. We strive for excellence in customer service through continuous development of our craftsmanship, competencies, and a positive, results-driven approach. Building productive, customer-centric, and service-oriented relationships, we are also committed to enhancing the value of our services through proactive environmental protection.</p>
@@ -143,16 +146,10 @@
                     <span class="material-icons" aria-hidden="true" style="vertical-align: middle;">miscellaneous_services</span> Machine Shop Works
                 </h3>
                 <p>Our machine shop is equipped to handle precision machining tasks, offering custom fabrication and repair solutions tailored to your vessel’s specific needs.</p>
-
-                <form action="https://www.facebook.com/bonifacio.tiongzon" method="get" target="_blank" class="flex gap-3">
-                    <button class="btn-primary" type="submit" tabindex="0" aria-label="Contact us for contracting services">
-                        <span class="material-icons" aria-hidden="true">call</span> Contact Us 
-                    </button>
-                </form>
             </div>
         </section>
-        
-        <section id="hiring" aria-labelledby="hiring-title">
+
+        <section id="hiring" aria-labelledby="hiring-title" class="flex justify-between">
             <div>
                 <h2 id="hiring-title">Hiring Opportunities</h2>
                 <p>Join BCT Ships Repair Services and become part of a dedicated team delivering top-quality ship repair and maintenance solutions. We are always looking for skilled professionals in various disciplines including welders, electricians, engineers, naval architects, and project managers.</p>
@@ -161,9 +158,6 @@
                     <span class="material-icons" aria-hidden="true">send</span> Apply Now 
                 </a>
             </div>
-        </section>
-
-        <section id="purchase-order" aria-labelledby="purchase-order-title">
             <div>
                 <h2 id="purchase-order-title">Purchase Order</h2>
                 <p>For all your purchase order needs, please fill out the form linked below. We ensure prompt processing and delivery of your orders.</p>
